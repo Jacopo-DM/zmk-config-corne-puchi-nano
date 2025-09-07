@@ -32,10 +32,9 @@
 #
 ---
 include:
-  - board: puchi_ble_v1 # nice_nano_v2
+  - board: puchi_ble_v1
     shield: corne_left nice_view_adapter nice_view
-    # snippet: studio-rpc-usb-uart
-  - board: puchi_ble_v1 # nice_nano_v2
+  - board: puchi_ble_v1
     shield: corne_right nice_view_adapter nice_view
 
 # ---------------------------------------------------------------------- #
