@@ -47,10 +47,10 @@
 
         control {
             bindings = <
-&kp MINUS        &kp EQUAL    &kp A               &kp LC(UP_ARROW)          &kp S          &kp LG(T)               &kp SEMICOLON  &kp TILDE  &kp GRAVE  &kp TILDE  &kp QUESTION  &none
-&kp LC(LS(TAB))  &kp LC(TAB)  &kp LC(LEFT_ARROW)  &kp C                     &kp LC(RIGHT)  &kp LG(W)               &kp LEFT       &kp DOWN   &kp UP     &kp RIGHT  &none         &none
-&kp SPACE        &kp ENTER    &kp Z               &kp LC(DOWN_ARROW)        &kp X          &none                   &none          &none      &none      &none      &none         &BT_SETTINGS
-                                                  &kp LC(LA(LEFT_COMMAND))  &trans         &kp LC(LEFT_COMMAND)    &none          &trans     &none
+&kp MINUS             &kp EQUAL      &kp A               &kp LC(UP_ARROW)    &kp S          &kp LG(LS(NUMBER_4))    &kp SEMICOLON  &kp TILDE  &kp GRAVE  &kp TILDE  &kp QUESTION  &none
+&kp LG(LC(LEFT_ALT))  &kp LG(LCTRL)  &kp LC(LEFT_ARROW)  &kp C               &kp LC(RIGHT)  &none                   &kp LEFT       &kp DOWN   &kp UP     &kp RIGHT  &none         &none
+&kp SPACE             &kp ENTER      &kp Z               &kp LC(DOWN_ARROW)  &kp X          &kp N                   &none          &none      &none      &none      &none         &BT_SETTINGS
+                                                         &none               &trans         &none                   &none          &trans     &none
             >;
         };
 
