@@ -14,7 +14,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "BT_SETTINGS";
             #binding-cells = <0>;
-            bindings = <&none>, <&none>, <&to 5>;
+            bindings = <&none>, <&none>, <&to 0>;
         };
 
         HOME_ROW: HOME_ROW {
@@ -84,19 +84,10 @@
 
         template {
             bindings = <
-&none      &none  &none  &none     &none   &none        &none    &none   &none     &none  &none  &kp BSPC
-&kp LSHFT  &none  &none  &none     &none   &none        &none    &none   &none     &none  &none  &none
-&kp LCTRL  &none  &none  &none     &none   &none        &none    &none   &none     &none  &none  &kp ESC
-                         &kp LGUI  &trans  &kp SPACE    &kp RET  &trans  &kp LALT
-            >;
-        };
-
-        template2 {
-            bindings = <
-&kp TAB  &none  &none                   &none              &none                     &none                   &none                  &none                      &none                      &none                    &none  &kp BSPC
-&none    &none  &HOME_ROW LEFT_SHIFT S  &HOME_ROW LCTRL D  &HOME_ROW LEFT_COMMAND F  &HOME_ROW LEFT_ALT G    &HOME_ROW RIGHT_ALT H  &HOME_ROW RIGHT_COMMAND J  &HOME_ROW RIGHT_CONTROL K  &HOME_ROW RIGHT_SHIFT L  &none  &none
-&none    &none  &none                   &none              &none                     &none                   &none                  &none                      &none                      &none                    &none  &kp ESCAPE
-                                        &none              &trans                    &kp SPACE               &kp RET                &trans                     &none
+&kp TAB  &none    &none                   &none              &none                     &none                   &none                  &none                      &none                      &none                    &none  &kp BSPC
+&none    &lt 2 A  &HOME_ROW LEFT_SHIFT S  &HOME_ROW LCTRL D  &HOME_ROW LEFT_COMMAND F  &HOME_ROW LEFT_ALT G    &HOME_ROW RIGHT_ALT H  &HOME_ROW RIGHT_COMMAND J  &HOME_ROW RIGHT_CONTROL K  &HOME_ROW RIGHT_SHIFT L  &mo 2  &none
+&none    &none    &none                   &none              &none                     &none                   &none                  &none                      &none                      &none                    &none  &kp ESCAPE
+                                          &trans             &trans                    &kp SPACE               &kp RET                &trans                     &trans
             >;
         };
     };
