@@ -66,10 +66,10 @@
 
         control {
             bindings = <
-&kp MINUS                 &kp EQUAL             &kp A               &kp LC(UP_ARROW)    &kp S          &kp LG(LS(NUMBER_4))    &kp LS(LA(LEFT))  &kp LA(DOWN)     &kp LA(UP)   &kp LS(LA(RIGHT))  &kp LG(X)    &kp BACKSPACE
-&kp LC(LA(LEFT_COMMAND))  &kp LC(LEFT_COMMAND)  &kp LC(LEFT_ARROW)  &kp C               &kp LC(RIGHT)  &none                   &kp LS(LG(P))     &kp LS(LG(RET))  &kp LA(RET)  &kp LG(FSLH)       &kp LG(DOT)  &kp LS(LG(I))
-&none                     &none                 &kp Z               &kp LC(DOWN_ARROW)  &kp X          &kp N                   &kp LG(A)         &kp LG(C)        &kp LG(V)    &kp LG(Z)          &kp LG(S)    &kp ESC
-                                                                    &trans              &trans         &kp SPACE               &kp ENTER         &trans           &trans
+&kp MINUS                 &kp EQUAL             &kp A               &kp LC(UP_ARROW)    &kp S          &kp LG(LS(NUMBER_4))     &kp LS(LA(LEFT))  &kp LA(DOWN)     &kp LA(UP)   &kp LS(LA(RIGHT))  &kp LG(X)      &kp BACKSPACE
+&kp LC(LA(LEFT_COMMAND))  &kp LC(LEFT_COMMAND)  &kp LC(LEFT_ARROW)  &kp C               &kp LC(RIGHT)  &kp LG(LC(LA(SPACE)))    &kp LS(LG(P))     &kp LS(LG(RET))  &kp LA(RET)  &kp LG(FSLH)       &kp LG(DOT)    &kp LS(LG(I))
+&none                     &kp LG(S)             &kp Z               &kp LC(DOWN_ARROW)  &kp X          &kp LG(LC(LA(N)))        &kp LG(A)         &kp LG(C)        &kp LG(V)    &kp LG(Z)          &kp LS(LG(Z))  &kp ESC
+                                                                    &trans              &trans         &kp SPACE                &kp ENTER         &trans           &trans
             >;
         };
 
