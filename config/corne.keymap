@@ -39,18 +39,18 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB  &kp Q    &kp W                   &kp E              &kp R                     &kp T                   &kp Y                  &kp U                      &kp I                      &kp O                    &kp P  &kp BSPC
-&none    &lt 2 A  &HOME_ROW LEFT_SHIFT S  &HOME_ROW LCTRL D  &HOME_ROW LEFT_COMMAND F  &HOME_ROW LEFT_ALT G    &HOME_ROW RIGHT_ALT H  &HOME_ROW RIGHT_COMMAND J  &HOME_ROW RIGHT_CONTROL K  &HOME_ROW RIGHT_SHIFT L  &mo 2  &none
-&none    &kp Z    &kp X                   &kp C              &kp V                     &kp B                   &kp N                  &kp M                      &none                      &none                    &none  &kp ESCAPE
-                                          &mo 3              &mo 1                     &kp SPACE               &kp RET                &mo 1                      &mo 2
+&kp ESCAPE  &kp Q    &kp W                   &kp E              &kp R                     &kp T                   &kp Y                  &kp U                      &kp I                      &kp O                    &kp P  &kp BSPC
+&none       &lt 2 A  &HOME_ROW LEFT_SHIFT S  &HOME_ROW LCTRL D  &HOME_ROW LEFT_COMMAND F  &HOME_ROW LEFT_ALT G    &HOME_ROW RIGHT_ALT H  &HOME_ROW RIGHT_COMMAND J  &HOME_ROW RIGHT_CONTROL K  &HOME_ROW RIGHT_SHIFT L  &mo 2  &none
+&kp TAB     &kp Z    &kp X                   &kp C              &kp V                     &kp B                   &kp N                  &kp M                      &none                      &none                    &none  &kp ESCAPE
+                                             &mo 3              &mo 1                     &kp SPACE               &kp RET                &mo 1                      &mo 2
             >;
         };
 
         symbols {
             bindings = <
-&kp TAB         &kp PIPE            &kp AMPERSAND                          &kp SINGLE_QUOTE               &kp HASH                       &kp GREATER_THAN            &kp LESS_THAN              &kp MINUS                           &kp PLUS                       &kp FSLH                                 &kp ASTERISK         &kp BSPC
+&kp ESC         &kp PIPE            &kp AMPERSAND                          &kp SINGLE_QUOTE               &kp HASH                       &kp GREATER_THAN            &kp LESS_THAN              &kp MINUS                           &kp PLUS                       &kp FSLH                                 &kp ASTERISK         &kp BSPC
 &kp LEFT_BRACE  &lt 2 LEFT_BRACKET  &HOME_ROW LEFT_SHIFT LEFT_PARENTHESIS  &HOME_ROW LCTRL DOUBLE_QUOTES  &HOME_ROW LEFT_COMMAND PERIOD  &HOME_ROW LEFT_ALT COMMA    &HOME_ROW RIGHT_ALT COLON  &HOME_ROW RIGHT_COMMAND UNDERSCORE  &HOME_ROW RIGHT_CONTROL EQUAL  &HOME_ROW RIGHT_SHIFT RIGHT_PARENTHESIS  &lt 2 RIGHT_BRACKET  &kp RIGHT_BRACE
-&none           &none               &kp TILDE                              &kp GRAVE                      &kp EXCLAMATION                &kp QUESTION                &kp SEMICOLON              &kp AT_SIGN                         &kp PERCENT                    &kp BSLH                                 &none                &kp ESCAPE
+&kp TAB         &none               &kp TILDE                              &kp GRAVE                      &kp EXCLAMATION                &kp QUESTION                &kp SEMICOLON              &kp AT_SIGN                         &kp PERCENT                    &kp BSLH                                 &none                &kp ESCAPE
                                                                            &trans                         &trans                         &kp SPACE                   &kp RET                    &trans                              &trans
             >;
         };
@@ -84,9 +84,9 @@
 
         template {
             bindings = <
-&kp TAB  &none    &none                   &none              &none                     &none                   &none                  &none                      &none                      &none                    &none  &kp BSPC
+&kp ESC  &none    &none                   &none              &none                     &none                   &none                  &none                      &none                      &none                    &none  &kp BSPC
 &none    &lt 2 A  &HOME_ROW LEFT_SHIFT S  &HOME_ROW LCTRL D  &HOME_ROW LEFT_COMMAND F  &HOME_ROW LEFT_ALT G    &HOME_ROW RIGHT_ALT H  &HOME_ROW RIGHT_COMMAND J  &HOME_ROW RIGHT_CONTROL K  &HOME_ROW RIGHT_SHIFT L  &mo 2  &none
-&none    &none    &none                   &none              &none                     &none                   &none                  &none                      &none                      &none                    &none  &kp ESCAPE
+&kp TAB  &none    &none                   &none              &none                     &none                   &none                  &none                      &none                      &none                    &none  &kp ESCAPE
                                           &trans             &trans                    &kp SPACE               &kp RET                &trans                     &trans
             >;
         };
