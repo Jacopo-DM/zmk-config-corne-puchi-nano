@@ -66,10 +66,10 @@
 
         control {
             bindings = <
-&kp MINUS                 &kp EQUAL             &kp A               &kp LC(UP_ARROW)    &kp S          &kp LG(LS(NUMBER_4))    &none      &none     &none   &none      &none         &kp BACKSPACE
-&kp LC(LA(LEFT_COMMAND))  &kp LC(LEFT_COMMAND)  &kp LC(LEFT_ARROW)  &kp C               &kp LC(RIGHT)  &none                   &kp LEFT   &kp DOWN  &kp UP  &kp RIGHT  &none         &none
-&none                     &none                 &kp Z               &kp LC(DOWN_ARROW)  &kp X          &kp N                   &none      &none     &none   &none      &BT_SETTINGS  &kp ESC
-                                                                    &trans              &trans         &kp SPACE               &kp ENTER  &trans    &trans
+&kp MINUS                 &kp EQUAL             &kp A               &kp LC(UP_ARROW)    &kp S          &kp LG(LS(NUMBER_4))    &none          &none            &none        &none         &none         &kp BACKSPACE
+&kp LC(LA(LEFT_COMMAND))  &kp LC(LEFT_COMMAND)  &kp LC(LEFT_ARROW)  &kp C               &kp LC(RIGHT)  &none                   &kp LS(LG(P))  &kp LS(LG(RET))  &kp LA(RET)  &kp LG(FSLH)  &kp LG(DOT)   &kp LS(LG(I))
+&none                     &none                 &kp Z               &kp LC(DOWN_ARROW)  &kp X          &kp N                   &none          &none            &none        &none         &BT_SETTINGS  &kp ESC
+                                                                    &trans              &trans         &kp SPACE               &kp ENTER      &trans           &trans
             >;
         };
 
