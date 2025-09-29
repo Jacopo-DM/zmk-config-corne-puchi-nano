@@ -97,7 +97,7 @@
             bindings = <
 &kp ESC      &none      &kp LG(W)             &none      &none      &kp LG(T)    &none          &none            &kp LS(LG(I))  &kp LG(FSLH)   &none        &kp BSPC
 &none        &kp LG(A)  &HW LEFT_SHIFT LG(S)  &none      &kp LG(F)  &none        &kp LC(LEFT)   &kp LC(DOWN)     &kp LC(UP)     &kp LC(RIGHT)  &kp LG(DOT)  &none
-&kp LC(TAB)  &kp LG(Z)  &kp LG(X)             &kp LG(C)  &kp LG(V)  &none        &kp LS(LC(P))  &kp LS(LG(RET))  &kp LA(RET)    &kp LC(GRAVE)  &none        &kp ESC
+&kp LC(TAB)  &kp LG(Z)  &kp LG(X)             &kp LG(C)  &kp LG(V)  &none        &kp LS(LG(P))  &kp LS(LG(RET))  &kp LA(RET)    &kp LC(GRAVE)  &none        &kp ESC
                                               &trans     &trans     &kp SPACE    &kp RET        &trans           &trans
             >;
         };
