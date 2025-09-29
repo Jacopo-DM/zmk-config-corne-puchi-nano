@@ -27,9 +27,9 @@
             flavor = "tap-preferred";
         };
 
-        HOME_ROW_MO: HOME_ROW_MO {
+        LAYER_TAP: LAYER_TAP {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOME_ROW_MO";
+            label = "LAYER_TAP";
             bindings = <&kp>, <&mo>;
 
             #binding-cells = <2>;
@@ -49,10 +49,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp ESCAPE  &kp Q             &kp W                   &kp E              &kp R                     &kp T                   &kp Y                  &kp U                      &kp I                      &kp O                    &kp P  &kp BSPC
-&none       &HOME_ROW_MO A 2  &HOME_ROW LEFT_SHIFT S  &HOME_ROW LCTRL D  &HOME_ROW LEFT_COMMAND F  &HOME_ROW LEFT_ALT G    &HOME_ROW RIGHT_ALT H  &HOME_ROW RIGHT_COMMAND J  &HOME_ROW RIGHT_CONTROL K  &HOME_ROW RIGHT_SHIFT L  &mo 2  &none
-&kp TAB     &kp Z             &kp X                   &kp C              &kp V                     &kp B                   &kp N                  &kp M                      &none                      &none                    &none  &kp ESCAPE
-                                                      &mo 3              &mo 1                     &kp SPACE               &kp RET                &mo 1                      &mo 2
+&kp ESCAPE  &kp Q           &kp W                   &kp E              &kp R                     &kp T                   &kp Y                  &kp U                      &kp I                      &kp O                    &kp P  &kp BSPC
+&none       &LAYER_TAP A 2  &HOME_ROW LEFT_SHIFT S  &HOME_ROW LCTRL D  &HOME_ROW LEFT_COMMAND F  &HOME_ROW LEFT_ALT G    &HOME_ROW RIGHT_ALT H  &HOME_ROW RIGHT_COMMAND J  &HOME_ROW RIGHT_CONTROL K  &HOME_ROW RIGHT_SHIFT L  &mo 2  &none
+&kp TAB     &kp Z           &kp X                   &kp C              &kp V                     &kp B                   &kp N                  &kp M                      &none                      &none                    &none  &kp ESCAPE
+                                                    &mo 3              &mo 1                     &kp SPACE               &kp RET                &mo 1                      &mo 2
             >;
         };
 
