@@ -62,7 +62,7 @@
 &kp ESCAPE  &kp Q      &kp W             &kp E        &kp R               &kp T             &kp Y            &kp U                &kp I                &kp O              &kp P  &kp BSPC
 &none       &HWLT 2 A  &HW LEFT_SHIFT S  &HW LCTRL D  &HW LEFT_COMMAND F  &HW LEFT_ALT G    &HW RIGHT_ALT H  &HW RIGHT_COMMAND J  &HW RIGHT_CONTROL K  &HW RIGHT_SHIFT L  &mo 2  &none
 &kp TAB     &kp Z      &kp X             &kp C        &kp V               &kp B             &kp N            &kp M                &none                &none              &none  &kp ESCAPE
-                                         &mo 3        &mo 1               &kp SPACE         &kp RET          &mo 1                &mo 4
+                                         &mo 3        &mo 1               &HWLT 4 SPACE     &HWLT 4 ENTER    &mo 1                &mo 3
             >;
         };
 
@@ -71,7 +71,7 @@
 &kp ESC         &kp PIPE            &kp AMPERSAND                    &kp SINGLE_QUOTE         &kp HASH                 &kp GREATER_THAN      &kp LESS_THAN        &kp MINUS                     &kp PLUS                 &kp FSLH                           &kp ASTERISK         &kp BSPC
 &kp LEFT_BRACE  &lt 3 LEFT_BRACKET  &HW LEFT_SHIFT LEFT_PARENTHESIS  &HW LCTRL DOUBLE_QUOTES  &HW LEFT_COMMAND PERIOD  &HW LEFT_ALT COMMA    &HW RIGHT_ALT COLON  &HW RIGHT_COMMAND UNDERSCORE  &HW RIGHT_CONTROL EQUAL  &HW RIGHT_SHIFT RIGHT_PARENTHESIS  &lt 3 RIGHT_BRACKET  &kp RIGHT_BRACE
 &kp TAB         &none               &kp TILDE                        &kp GRAVE                &kp EXCLAMATION          &kp QUESTION          &kp SEMICOLON        &kp AT_SIGN                   &kp PERCENT              &kp BSLH                           &none                &kp ESCAPE
-                                                                     &trans                   &trans                   &kp SPACE             &kp RET              &trans                        &trans
+                                                                     &trans                   &trans                   &trans                &trans               &trans                        &trans
             >;
         };
 
@@ -86,10 +86,10 @@
 
         control {
             bindings = <
-&kp MINUS                 &kp EQUAL             &kp A               &kp LC(UP_ARROW)    &kp S          &kp LG(LS(NUMBER_4))     &none      &none   &none   &none  &none  &kp BACKSPACE
-&kp LC(LA(LEFT_COMMAND))  &kp LC(LEFT_COMMAND)  &kp LC(LEFT_ARROW)  &kp C               &kp LC(RIGHT)  &kp LG(LC(LA(SPACE)))    &none      &none   &none   &none  &none  &none
-&none                     &none                 &kp Z               &kp LC(DOWN_ARROW)  &kp X          &kp LG(LC(LA(N)))        &none      &none   &none   &none  &none  &kp ESC
-                                                                    &trans              &trans         &kp SPACE                &kp ENTER  &trans  &trans
+&kp MINUS                 &kp EQUAL             &kp A               &kp LC(UP_ARROW)    &kp S          &kp LG(LS(NUMBER_4))     &none   &none   &none   &none  &none  &kp BACKSPACE
+&kp LC(LA(LEFT_COMMAND))  &kp LC(LEFT_COMMAND)  &kp LC(LEFT_ARROW)  &kp C               &kp LC(RIGHT)  &kp LG(LC(LA(SPACE)))    &none   &none   &none   &none  &none  &none
+&none                     &none                 &kp Z               &kp LC(DOWN_ARROW)  &kp X          &kp LG(LC(LA(N)))        &none   &none   &none   &none  &none  &kp ESC
+                                                                    &trans              &trans         &trans                   &trans  &trans  &trans
             >;
         };
 
@@ -98,7 +98,7 @@
 &kp ESC      &none      &kp LG(W)             &none      &none      &kp LG(T)    &none          &none            &kp LS(LG(I))  &kp LG(FSLH)   &none        &kp BSPC
 &none        &kp LG(A)  &HW LEFT_SHIFT LG(S)  &none      &kp LG(F)  &none        &kp LA(LEFT)   &kp LA(DOWN)     &kp LA(UP)     &kp LA(RIGHT)  &kp LG(DOT)  &none
 &kp LC(TAB)  &kp LG(Z)  &kp LG(X)             &kp LG(C)  &kp LG(V)  &none        &kp LS(LG(P))  &kp LS(LG(RET))  &kp LA(RET)    &kp LC(GRAVE)  &none        &kp ESC
-                                              &trans     &trans     &kp SPACE    &kp RET        &trans           &trans
+                                              &trans     &trans     &trans       &trans         &trans           &trans
             >;
         };
 
@@ -116,7 +116,7 @@
 &kp ESC  &none    &none             &none        &none               &none             &none            &none                &none                &none              &none  &kp BSPC
 &none    &lt 3 A  &HW LEFT_SHIFT S  &HW LCTRL D  &HW LEFT_COMMAND F  &HW LEFT_ALT G    &HW RIGHT_ALT H  &HW RIGHT_COMMAND J  &HW RIGHT_CONTROL K  &HW RIGHT_SHIFT L  &mo 3  &none
 &kp TAB  &none    &none             &none        &none               &none             &none            &none                &none                &none              &none  &kp ESCAPE
-                                    &trans       &trans              &kp SPACE         &kp RET          &trans               &trans
+                                    &trans       &trans              &trans            &trans           &trans               &trans
             >;
         };
     };
