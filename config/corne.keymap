@@ -17,9 +17,9 @@
             bindings = <&none>, <&none>, <&to 0>;
         };
 
-        HOME_ROW: HOME_ROW {
+        HW: HW {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOME_ROW";
+            label = "HW";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
@@ -27,10 +27,20 @@
             flavor = "tap-preferred";
         };
 
-        LAYER_TAP: LAYER_TAP {
+        HWLT: HWLT {
             compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_TAP";
+            label = "HWLT";
             bindings = <&kp>, <&mo>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+        };
+
+        HRNA: HRNA {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HRNA";
+            bindings = <&none>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -49,19 +59,19 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp ESCAPE  &kp Q           &kp W                   &kp E              &kp R                     &kp T                   &kp Y                  &kp U                      &kp I                      &kp O                    &kp P  &kp BSPC
-&none       &LAYER_TAP A 2  &HOME_ROW LEFT_SHIFT S  &HOME_ROW LCTRL D  &HOME_ROW LEFT_COMMAND F  &HOME_ROW LEFT_ALT G    &HOME_ROW RIGHT_ALT H  &HOME_ROW RIGHT_COMMAND J  &HOME_ROW RIGHT_CONTROL K  &HOME_ROW RIGHT_SHIFT L  &mo 2  &none
-&kp TAB     &kp Z           &kp X                   &kp C              &kp V                     &kp B                   &kp N                  &kp M                      &none                      &none                    &none  &kp ESCAPE
-                                                    &mo 3              &mo 1                     &kp SPACE               &kp RET                &mo 1                      &mo 2
+&kp ESCAPE  &kp Q      &kp W             &kp E        &kp R               &kp T             &kp Y            &kp U                &kp I                &kp O              &kp P  &kp BSPC
+&none       &HWLT A 2  &HW LEFT_SHIFT S  &HW LCTRL D  &HW LEFT_COMMAND F  &HW LEFT_ALT G    &HW RIGHT_ALT H  &HW RIGHT_COMMAND J  &HW RIGHT_CONTROL K  &HW RIGHT_SHIFT L  &mo 2  &none
+&kp TAB     &kp Z      &kp X             &kp C        &kp V               &kp B             &kp N            &kp M                &none                &none              &none  &kp ESCAPE
+                                         &mo 3        &mo 1               &kp SPACE         &kp RET          &mo 1                &mo 4
             >;
         };
 
         symbols {
             bindings = <
-&kp ESC         &kp PIPE            &kp AMPERSAND                          &kp SINGLE_QUOTE               &kp HASH                       &kp GREATER_THAN            &kp LESS_THAN              &kp MINUS                           &kp PLUS                       &kp FSLH                                 &kp ASTERISK         &kp BSPC
-&kp LEFT_BRACE  &lt 2 LEFT_BRACKET  &HOME_ROW LEFT_SHIFT LEFT_PARENTHESIS  &HOME_ROW LCTRL DOUBLE_QUOTES  &HOME_ROW LEFT_COMMAND PERIOD  &HOME_ROW LEFT_ALT COMMA    &HOME_ROW RIGHT_ALT COLON  &HOME_ROW RIGHT_COMMAND UNDERSCORE  &HOME_ROW RIGHT_CONTROL EQUAL  &HOME_ROW RIGHT_SHIFT RIGHT_PARENTHESIS  &lt 2 RIGHT_BRACKET  &kp RIGHT_BRACE
-&kp TAB         &none               &kp TILDE                              &kp GRAVE                      &kp EXCLAMATION                &kp QUESTION                &kp SEMICOLON              &kp AT_SIGN                         &kp PERCENT                    &kp BSLH                                 &none                &kp ESCAPE
-                                                                           &trans                         &trans                         &kp SPACE                   &kp RET                    &trans                              &trans
+&kp ESC         &kp PIPE            &kp AMPERSAND                    &kp SINGLE_QUOTE         &kp HASH                 &kp GREATER_THAN      &kp LESS_THAN        &kp MINUS                     &kp PLUS                 &kp FSLH                           &kp ASTERISK         &kp BSPC
+&kp LEFT_BRACE  &lt 3 LEFT_BRACKET  &HW LEFT_SHIFT LEFT_PARENTHESIS  &HW LCTRL DOUBLE_QUOTES  &HW LEFT_COMMAND PERIOD  &HW LEFT_ALT COMMA    &HW RIGHT_ALT COLON  &HW RIGHT_COMMAND UNDERSCORE  &HW RIGHT_CONTROL EQUAL  &HW RIGHT_SHIFT RIGHT_PARENTHESIS  &lt 3 RIGHT_BRACKET  &kp RIGHT_BRACE
+&kp TAB         &none               &kp TILDE                        &kp GRAVE                &kp EXCLAMATION          &kp QUESTION          &kp SEMICOLON        &kp AT_SIGN                   &kp PERCENT              &kp BSLH                           &none                &kp ESCAPE
+                                                                     &trans                   &trans                   &kp SPACE             &kp RET              &trans                        &trans
             >;
         };
 
@@ -76,19 +86,19 @@
 
         control {
             bindings = <
-&kp MINUS                 &kp EQUAL             &kp A               &kp LC(UP_ARROW)    &kp S          &kp LG(LS(NUMBER_4))     &kp LS(LA(LEFT))  &kp LA(DOWN)     &kp LA(UP)   &kp LS(LA(RIGHT))  &kp LG(X)      &kp BACKSPACE
-&kp LC(LA(LEFT_COMMAND))  &kp LC(LEFT_COMMAND)  &kp LC(LEFT_ARROW)  &kp C               &kp LC(RIGHT)  &kp LG(LC(LA(SPACE)))    &kp LS(LG(P))     &kp LS(LG(RET))  &kp LA(RET)  &kp LG(FSLH)       &kp LG(DOT)    &kp LS(LG(I))
-&kp LG(F)                 &kp LG(S)             &kp Z               &kp LC(DOWN_ARROW)  &kp X          &kp LG(LC(LA(N)))        &kp LG(A)         &kp LG(C)        &kp LG(V)    &kp LG(Z)          &kp LS(LG(Z))  &kp ESC
-                                                                    &trans              &trans         &kp SPACE                &kp ENTER         &trans           &trans
+&kp MINUS                 &kp EQUAL             &kp A               &kp LC(UP_ARROW)    &kp S          &kp LG(LS(NUMBER_4))     &none      &none   &none   &none  &none  &kp BACKSPACE
+&kp LC(LA(LEFT_COMMAND))  &kp LC(LEFT_COMMAND)  &kp LC(LEFT_ARROW)  &kp C               &kp LC(RIGHT)  &kp LG(LC(LA(SPACE)))    &none      &none   &none   &none  &none  &none
+&none                     &none                 &kp Z               &kp LC(DOWN_ARROW)  &kp X          &kp LG(LC(LA(N)))        &none      &none   &none   &none  &none  &kp ESC
+                                                                    &trans              &trans         &kp SPACE                &kp ENTER  &trans  &trans
             >;
         };
 
         vscode {
             bindings = <
-&kp MINUS                 &kp EQUAL             &kp A               &kp LC(UP_ARROW)    &kp S          &kp LG(LS(NUMBER_4))     &kp LS(LA(LEFT))  &kp LA(DOWN)     &kp LA(UP)   &kp LS(LA(RIGHT))  &kp LG(X)      &kp BACKSPACE
-&kp LC(LA(LEFT_COMMAND))  &kp LC(LEFT_COMMAND)  &kp LC(LEFT_ARROW)  &kp C               &kp LC(RIGHT)  &kp LG(LC(LA(SPACE)))    &kp LS(LG(P))     &kp LS(LG(RET))  &kp LA(RET)  &kp LG(FSLH)       &kp LG(DOT)    &kp LS(LG(I))
-&kp LG(F)                 &kp LG(S)             &kp Z               &kp LC(DOWN_ARROW)  &kp X          &kp LG(LC(LA(N)))        &kp LG(A)         &kp LG(C)        &kp LG(V)    &kp LG(Z)          &kp LS(LG(Z))  &kp ESC
-                                                                    &trans              &trans         &kp SPACE                &kp ENTER         &trans           &trans
+&kp ESC      &none      &kp LG(W)             &none      &none      &kp LG(T)    &none          &none            &kp LS(LG(I))  &kp LG(FSLH)   &none        &kp BSPC
+&none        &kp LG(A)  &HW LG(S) LEFT_SHIFT  &none      &kp LG(F)  &none        &kp LC(LEFT)   &kp LC(DOWN)     &kp LC(UP)     &kp LC(RIGHT)  &kp LG(DOT)  &none
+&kp LC(TAB)  &kp LG(Z)  &kp LG(X)             &kp LG(C)  &kp LG(V)  &none        &kp LS(LC(P))  &kp LS(LG(RET))  &kp LA(RET)    &kp LC(GRAVE)  &none        &kp ESC
+                                              &trans     &trans     &kp SPACE    &kp RET        &trans           &trans
             >;
         };
 
@@ -103,10 +113,10 @@
 
         template {
             bindings = <
-&kp ESC  &none    &none                   &none              &none                     &none                   &none                  &none                      &none                      &none                    &none  &kp BSPC
-&none    &lt 2 A  &HOME_ROW LEFT_SHIFT S  &HOME_ROW LCTRL D  &HOME_ROW LEFT_COMMAND F  &HOME_ROW LEFT_ALT G    &HOME_ROW RIGHT_ALT H  &HOME_ROW RIGHT_COMMAND J  &HOME_ROW RIGHT_CONTROL K  &HOME_ROW RIGHT_SHIFT L  &mo 2  &none
-&kp TAB  &none    &none                   &none              &none                     &none                   &none                  &none                      &none                      &none                    &none  &kp ESCAPE
-                                          &trans             &trans                    &kp SPACE               &kp RET                &trans                     &trans
+&kp ESC  &none    &none             &none        &none               &none             &none            &none                &none                &none              &none  &kp BSPC
+&none    &lt 3 A  &HW LEFT_SHIFT S  &HW LCTRL D  &HW LEFT_COMMAND F  &HW LEFT_ALT G    &HW RIGHT_ALT H  &HW RIGHT_COMMAND J  &HW RIGHT_CONTROL K  &HW RIGHT_SHIFT L  &mo 3  &none
+&kp TAB  &none    &none             &none        &none               &none             &none            &none                &none                &none              &none  &kp ESCAPE
+                                    &trans       &trans              &kp SPACE         &kp RET          &trans               &trans
             >;
         };
     };
