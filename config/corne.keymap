@@ -96,8 +96,8 @@
         vscode {
             bindings = <
 &kp ESC      &none      &kp LG(W)             &none      &none      &kp LG(T)    &none          &none            &kp LS(LG(I))  &kp LG(FSLH)   &none        &kp BSPC
-&none        &kp LG(A)  &HW LEFT_SHIFT LG(S)  &none      &kp LG(F)  &none        &kp LA(LEFT)   &kp LA(DOWN)     &kp LA(UP)     &kp LA(RIGHT)  &kp LG(DOT)  &none
-&kp LC(TAB)  &kp LG(Z)  &kp LG(X)             &kp LG(C)  &kp LG(V)  &none        &kp LS(LG(P))  &kp LS(LG(RET))  &kp LA(RET)    &kp LC(GRAVE)  &none        &kp ESC
+&none        &kp LG(A)  &HW LEFT_SHIFT LG(S)  &none      &kp LG(F)  &none        &kp LA(LEFT)   &kp LA(DOWN)     &kp LA(UP)     &kp LA(RIGHT)  &none        &none
+&kp LC(TAB)  &kp LG(Z)  &kp LG(X)             &kp LG(C)  &kp LG(V)  &none        &kp LS(LG(P))  &kp LS(LG(RET))  &kp LA(RET)    &kp LC(GRAVE)  &kp LG(DOT)  &kp ESC
                                               &trans     &trans     &trans       &trans         &trans           &trans
             >;
         };
