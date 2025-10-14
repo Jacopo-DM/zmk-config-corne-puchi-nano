@@ -36,6 +36,16 @@
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
         };
+
+        HWNA: HWNA {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HWNA";
+            bindings = <&kp>, <&none>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+        };
     };
 
     keymap {
@@ -58,10 +68,10 @@
 
         symbols {
             bindings = <
-&kp ESC         &kp PIPE                 &kp AMPERSAND                &kp SINGLE_QUOTE          &kp HASH           &kp GREATER_THAN    &kp LESS_THAN     &kp MINUS              &kp PLUS          &kp FSLH                      &kp ASTERISK              &kp BSPC
-&kp LEFT_BRACE  &HWLT 2 LEFT_BRACKET     &HW LCTRL LEFT_PARENTHESIS   &HW LEFT_SHIFT DOUBLE_QUOTES &HW LEFT_COMMAND PERIOD &HW LEFT_ALT COMMA &HW RIGHT_ALT COLON &HW RIGHT_COMMAND UNDERSCORE &HW RIGHT_SHIFT EQUAL &HW RIGHT_CONTROL RIGHT_PARENTHESIS &HWLT 2 RIGHT_BRACKET &kp RIGHT_BRACE
-&kp TAB         &kp DOLLAR               &kp TILDE                    &kp GRAVE                 &kp EXCLAMATION    &kp QUESTION        &kp SEMI          &kp AT_SIGN            &kp PERCENT       &kp BSLH                      &kp CARET                 &kp ESCAPE
-                                                                      &trans                    &trans             &trans              &trans            &trans                 &trans
+&kp ESC         &kp PIPE              &kp AMPERSAND               &kp SINGLE_QUOTE              &kp HASH                 &kp GREATER_THAN      &kp LESS_THAN        &kp MINUS                     &kp PLUS               &kp FSLH                             &kp ASTERISK           &kp BSPC
+&kp LEFT_BRACE  &HWLT 2 LEFT_BRACKET  &HW LCTRL LEFT_PARENTHESIS  &HW LEFT_SHIFT DOUBLE_QUOTES  &HW LEFT_COMMAND PERIOD  &HW LEFT_ALT COMMA    &HW RIGHT_ALT COLON  &HW RIGHT_COMMAND UNDERSCORE  &HW RIGHT_SHIFT EQUAL  &HW RIGHT_CONTROL RIGHT_PARENTHESIS  &HWLT 2 RIGHT_BRACKET  &kp RIGHT_BRACE
+&kp TAB         &kp DOLLAR            &kp TILDE                   &kp GRAVE                     &kp EXCLAMATION          &kp QUESTION          &kp SEMI             &kp AT_SIGN                   &kp PERCENT            &kp BSLH                             &kp CARET              &kp ESCAPE
+                                                                  &trans                        &trans                   &trans                &trans               &trans                        &trans
             >;
         };
 
@@ -76,19 +86,19 @@
 
         control {
             bindings = <
-&kp MINUS         &kp EQUAL  &kp LG(LC(A))              &kp LC(UP_ARROW)      &kp LG(LC(S))               &kp LG(LS(NUMBER_4))        &none     &none     &none   &none      &none  &kp BACKSPACE
-&kp LG(LEFT_ALT)  &kp LCMD   &HWLT LCTRL LC(LEFT_ARROW) &HW LEFT_SHIFT LG(LA(C)) &HW LEFT_COMMAND LC(RIGHT_ARROW) &HWLT LEFT_ALT LG(LC(LA(N))) &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &none  &none
-&none             &none      &kp LG(LC(Z))              &kp LC(DOWN_ARROW)    &kp LG(LC(X))               &kp LG(LC(LA(SPACE)))       &none     &none     &none   &none      &none  &kp ESC
-                                                        &trans                &trans                      &trans                      &trans    &trans    &trans
+&kp MINUS         &kp EQUAL  &kp LG(LC(A))                    &kp LC(UP_ARROW)          &kp LG(LC(S))                     &kp LG(LS(NUMBER_4))          &none     &none     &none   &none      &none  &kp BACKSPACE
+&kp LG(LEFT_ALT)  &kp LCMD   &HW LEFT_CONTROL LC(LEFT_ARROW)  &HW LEFT_SHIFT LG(LA(C))  &HW LEFT_COMMAND LC(RIGHT_ARROW)  &HW LEFT_ALT LG(LC(LA(N)))    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &none  &none
+&none             &none      &kp LG(LC(Z))                    &kp LC(DOWN_ARROW)        &kp LG(LC(X))                     &kp LG(LC(LA(SPACE)))         &none     &none     &none   &none      &none  &kp ESC
+                                                              &trans                    &trans                            &trans                        &trans    &trans    &trans
             >;
         };
 
         vscode {
             bindings = <
-&kp ESC        &none             &kp LG(W)         &none      &kp LG(R)         &kp LG(T)    &kp LS(LG(N))  &kp LG(O)        &kp LS(LG(I))  &kp LG(FSLH)   &none        &kp BSPC
-&none          &HWLT 2 LG(A)     &HW LCTRL LG(S)   &trans     &HWLT 2 LG(F)     &trans       &kp LEFT       &kp DOWN         &kp UP         &kp RIGHT      &none        &none
-&kp LS(LG(Z))  &kp LG(Z)         &kp LG(X)         &kp LG(C)  &kp LG(V)         &none        &kp LS(LG(P))  &kp LS(LG(RET))  &kp LA(RET)    &kp LC(GRAVE)  &kp LG(DOT)  &kp ESC
-                                                   &trans     &trans            &trans       &trans         &trans           &trans
+&kp ESC        &none          &kp LG(W)        &none               &kp LG(R)      &kp LG(T)           &kp LS(LG(N))  &kp LG(O)        &kp LS(LG(I))  &kp LG(FSLH)   &none        &kp BSPC
+&none          &HWLT 2 LG(A)  &HW LCTRL LG(S)  &HWNA LEFT_SHIFT 0  &HWLT 2 LG(F)  &HWNA LEFT_ALT 0    &kp LEFT       &kp DOWN         &kp UP         &kp RIGHT      &none        &none
+&kp LS(LG(Z))  &kp LG(Z)      &kp LG(X)        &kp LG(C)           &kp LG(V)      &none               &kp LS(LG(P))  &kp LS(LG(RET))  &kp LA(RET)    &kp LC(GRAVE)  &kp LG(DOT)  &kp ESC
+                                               &trans              &trans         &trans              &trans         &trans           &trans
             >;
         };
 
@@ -103,10 +113,10 @@
 
         template {
             bindings = <
-&kp ESC  &none         &none         &none         &none         &none           &none         &none         &none         &none         &none                 &kp BSPC
-&none    &HWLT 2 A     &HW LCTRL S   &HW LEFT_SHIFT D &HW LEFT_COMMAND F &HW LEFT_ALT G &HW RIGHT_ALT H &HW RIGHT_COMMAND J &HW RIGHT_SHIFT K &HW RIGHT_CONTROL L &HWLT 2 SEMICOLON &none
-&none    &none         &none         &none         &none         &none           &none         &none         &none         &none         &none                 &kp ESCAPE
-                                     &trans        &trans        &trans          &trans        &trans        &trans
+&kp ESC  &none      &none        &none             &none               &none             &none            &none                &none              &none                &none              &kp BSPC
+&none    &HWLT 2 A  &HW LCTRL S  &HW LEFT_SHIFT D  &HW LEFT_COMMAND F  &HW LEFT_ALT G    &HW RIGHT_ALT H  &HW RIGHT_COMMAND J  &HW RIGHT_SHIFT K  &HW RIGHT_CONTROL L  &HWLT 2 SEMICOLON  &none
+&none    &none      &none        &none             &none               &none             &none            &none                &none              &none                &none              &kp ESCAPE
+                                 &trans            &trans              &trans            &trans           &trans               &trans
             >;
         };
     };
