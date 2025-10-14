@@ -87,8 +87,8 @@
         control {
             bindings = <
 &kp MINUS         &kp EQUAL  &kp LG(LC(A))       &kp LC(UP_ARROW)    &kp LG(LC(S))  &kp LG(LS(NUMBER_4))     &none     &none     &none   &none      &none  &kp BACKSPACE
-&kp LG(LEFT_ALT)  &kp LCMD   &kp LC(LEFT_ARROW)  &kp LG(LC(C))       &kp LC(RIGHT)  &kp LG(LC(LA(SPACE)))    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &none  &none
-&none             &none      &kp LG(LC(Z))       &kp LC(DOWN_ARROW)  &kp LG(LC(X))  &kp LG(LC(LA(N)))        &none     &none     &none   &none      &none  &kp ESC
+&kp LG(LEFT_ALT)  &kp LCMD   &kp LC(LEFT_ARROW)  &kp LG(LC(C))       &kp LC(RIGHT)  &kp LG(LC(LA(N)))        &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &none  &none
+&none             &none      &kp LG(LC(Z))       &kp LC(DOWN_ARROW)  &kp LG(LC(X))  &kp LG(LC(LA(SPACE)))    &none     &none     &none   &none      &none  &kp ESC
                                                  &trans              &trans         &trans                   &trans    &trans    &trans
             >;
         };
