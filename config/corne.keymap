@@ -87,7 +87,7 @@
         control {
             bindings = <
 &kp MINUS         &kp EQUAL  &kp LG(LC(A))                    &kp LC(UP_ARROW)          &kp LG(LC(S))                     &kp LG(LS(NUMBER_4))          &none     &none     &none   &none      &none  &kp BACKSPACE
-&kp LG(LEFT_ALT)  &kp LCMD   &HW LEFT_CONTROL LC(LEFT_ARROW)  &HW LEFT_SHIFT LG(LA(C))  &HW LEFT_COMMAND LC(RIGHT_ARROW)  &HW LEFT_ALT LG(LC(LA(N)))    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &none  &none
+&kp LG(LEFT_ALT)  &kp LCMD   &HW LEFT_CONTROL LC(LEFT_ARROW)  &HW LEFT_SHIFT LG(LC(C))  &HW LEFT_COMMAND LC(RIGHT_ARROW)  &HW LEFT_ALT LG(LC(LA(N)))    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &none  &none
 &none             &none      &kp LG(LC(Z))                    &kp LC(DOWN_ARROW)        &kp LG(LC(X))                     &kp LG(LC(LA(SPACE)))         &none     &none     &none   &none      &none  &kp ESC
                                                               &trans                    &trans                            &trans                        &trans    &trans    &trans
             >;
