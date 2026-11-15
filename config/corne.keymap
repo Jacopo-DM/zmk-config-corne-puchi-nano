@@ -47,30 +47,35 @@
 
         win_left {
             timeout-ms = <50>;
+            layers = <BASE>;
             key-positions = <26 27 28>;
             bindings = <&mo WIN>;
         };
 
         win_right {
             timeout-ms = <50>;
+            layers = <BASE>;
             key-positions = <31 32 33>;
             bindings = <&mo WIN>;
         };
 
         ctlcmd_left {
             timeout-ms = <50>;
+            layers = <BASE>;
             key-positions = <26 28>;
             bindings = <&mo CTLCMD>;
         };
 
         ctlcmd_right {
             timeout-ms = <50>;
+            layers = <BASE>;
             key-positions = <31 33>;
             bindings = <&mo CTLCMD>;
         };
 
         bluetooth {
             timeout-ms = <50>;
+            layers = <BASE>;
             key-positions = <30 31>;
             bindings = <&mo BT>;
         };
@@ -93,7 +98,7 @@
         window {
             display-name = "Window";
             bindings = <
-&to BASE  &none       &none       &none       &none  &none    &none         &none         &none       &none          &none          &none
+&to BASE  &none       &none       &none       &none  &none    &none         &none         &none       &kp CAG(MINUS) &kp CAG(EQUAL) &none
 &none     &kp CAG(A)  &kp CAG(S)  &none       &none  &none    &kp CAG(LEFT) &kp CAG(DOWN) &kp CAG(UP) &kp CAG(RIGHT) &none          &none
 &none     &kp CAG(Z)  &kp CAG(X)  &kp CAG(C)  &none  &none    &none         &none         &none       &none          &none          &none
                                   &none       &none  &none    &none         &none         &none
