@@ -32,10 +32,11 @@
 #
 ---
 include:
-  # Studio and battery forwarding run on the central (left) half only. The
-  # snippet adds the USB serial endpoint Studio talks to; the battery flags
-  # make the left half read the right half's level and report it to the
-  # computer as a second battery.
+  # Studio, battery forwarding and the pairing PIN apply to the central
+  # (left) half only. The snippet adds the USB serial endpoint Studio talks
+  # to; the battery flags make the left half read the right half's level and
+  # report it to the computer as a second battery; the PIN is typed on the
+  # keyboard when pairing with a computer.
   - board: puchi_ble_v1
     shield: corne_left
     snippet: studio-rpc-usb-uart
@@ -44,6 +45,7 @@ include:
       -DCONFIG_ZMK_STUDIO_LOCKING=n
       -DCONFIG_ZMK_SPLIT_BLE_CENTRAL_BATTERY_LEVEL_FETCHING=y
       -DCONFIG_ZMK_SPLIT_BLE_CENTRAL_BATTERY_LEVEL_PROXY=y
+      -DCONFIG_ZMK_BLE_PASSKEY_ENTRY=y
   - board: puchi_ble_v1
     shield: corne_right
   # Flash to both halves to erase all stored pairings, then flash the
