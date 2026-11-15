@@ -1,123 +1,168 @@
 /*
- * Copyright (c) 2020 The ZMK Contributors
+ * Corne keymap ported from the Kyria (Vial export kb_v3_old.vil).
  *
- * SPDX-License-Identifier: MIT
+ * Corne key positions:
+ *    0  1  2  3  4  5      6  7  8  9 10 11
+ *   12 13 14 15 16 17     18 19 20 21 22 23
+ *   24 25 26 27 28 29     30 31 32 33 34 35
+ *            36 37 38     39 40 41
+ *
+ * Differences from the Kyria, which has five thumb keys a side and two
+ * extra inner keys: the thumbs keep Cmd, Space and Enter; the layer-6 key
+ * moves to the empty outer bottom-row key; [ ] { } move to the symbol
+ * layer thumbs; the RGB layer becomes the Bluetooth layer.
  */
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
+#define BASE 0
+#define WIN 1
+#define CTLCMD 2
+#define NAV 3
+#define SYM 4
+#define BT 5
+#define MEDIA 6
+
+// Ctrl+Alt+Cmd and Ctrl+Cmd, the Kyria's LCAG() and LCG()
+#define CAG(key) LC(LA(LG(key)))
+#define CG(key) LC(LG(key))
+
+// QMK mod-tap with tapping term 200 and no permissive hold: hold only
+// when held past the tapping term.
+&mt {
+    flavor = "tap-preferred";
+    tapping-term-ms = <200>;
+};
+
+&lt {
+    flavor = "tap-preferred";
+    tapping-term-ms = <200>;
+};
+
 / {
-    behaviors {
-        BT_SETTINGS: BT_SETTINGS {
-            compatible = "zmk,behavior-tap-dance";
-            label = "BT_SETTINGS";
-            #binding-cells = <0>;
-            bindings = <&none>, <&none>, <&to 0>;
+    combos {
+        compatible = "zmk,combos";
+
+        win_left {
+            timeout-ms = <50>;
+            key-positions = <26 27 28>;
+            bindings = <&mo WIN>;
         };
 
-        HW: HW {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HW";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "tap-preferred";
+        win_right {
+            timeout-ms = <50>;
+            key-positions = <31 32 33>;
+            bindings = <&mo WIN>;
         };
 
-        HWLT: HWLT {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HWLT";
-            bindings = <&mo>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "tap-preferred";
+        ctlcmd_left {
+            timeout-ms = <50>;
+            key-positions = <26 28>;
+            bindings = <&mo CTLCMD>;
         };
 
-        HWNA: HWNA {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HWNA";
-            bindings = <&kp>, <&none>;
+        ctlcmd_right {
+            timeout-ms = <50>;
+            key-positions = <31 33>;
+            bindings = <&mo CTLCMD>;
+        };
 
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "tap-preferred";
+        bluetooth {
+            timeout-ms = <50>;
+            key-positions = <30 31>;
+            bindings = <&mo BT>;
         };
     };
 
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BSPC |
-            // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-            // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-            //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
-
+        base {
+            display-name = "Base";
             bindings = <
-&kp ESCAPE  &kp Q      &kp W        &kp E             &kp R               &kp T             &kp Y            &kp U                &kp I              &kp O                &kp P              &kp BSPC
-&none       &HWLT 2 A  &HW LCTRL S  &HW LEFT_SHIFT D  &HW LEFT_COMMAND F  &HW LEFT_ALT G    &HW RIGHT_ALT H  &HW RIGHT_COMMAND J  &HW RIGHT_SHIFT K  &HW RIGHT_CONTROL L  &HWLT 2 SEMICOLON  &none
-&none       &kp Z      &kp X        &kp C             &kp V               &kp B             &kp N            &kp M                &none              &none                &none              &kp ESCAPE
-                                    &HWLT 3 TAB       &HWLT 1 SPACE       &HWLT 4 ENTER     &HWLT 4 ENTER    &HWLT 1 SPACE        &HWLT 3 LS(TAB)
+&kp ESC    &kp Q            &kp W            &kp E           &kp R      &kp T        &kp Y      &kp U      &kp I           &kp O            &kp P               &kp BSPC
+&kp TAB    &mt LSHFT A      &mt LCTRL S      &mt LALT D      &lt SYM F  &kp G        &kp H      &lt SYM J  &mt RALT K      &mt RCTRL L      &mt RSHFT SEMI      &kp SQT
+&mo MEDIA  &kp Z            &kp X            &kp C           &kp V      &kp B        &kp N      &kp M      &kp COMMA       &kp DOT          &kp FSLH            &mo MEDIA
+                                             &kp LGUI        &kp SPACE  &lt NAV RET  &lt NAV RET  &kp SPACE  &kp RGUI
             >;
         };
 
+        // Window management (Ctrl+Alt+Cmd), held by X+C+V or M+,+.
+        window {
+            display-name = "Window";
+            bindings = <
+&to BASE  &none       &none       &none       &none  &none    &none         &none         &none       &none          &none          &none
+&none     &kp CAG(A)  &kp CAG(S)  &none       &none  &none    &kp CAG(LEFT) &kp CAG(DOWN) &kp CAG(UP) &kp CAG(RIGHT) &none          &none
+&none     &kp CAG(Z)  &kp CAG(X)  &kp CAG(C)  &none  &none    &none         &none         &none       &none          &none          &none
+                                  &none       &none  &none    &none         &none         &none
+            >;
+        };
+
+        // Ctrl+Cmd shortcuts, held by X+V or M+.
+        ctrl_cmd {
+            display-name = "Ctrl+Cmd";
+            bindings = <
+&to BASE  &none      &none      &none  &none  &none          &none          &none         &none       &none          &none  &none
+&none     &kp CG(A)  &kp CG(S)  &none  &none  &none          &kp CG(LEFT)   &kp CG(DOWN)  &kp CG(UP)  &kp CG(RIGHT)  &none  &none
+&none     &kp CG(Z)  &kp CG(X)  &none  &none  &none          &none          &none         &none       &none          &none  &none
+                                &none  &none  &kp CG(RET)    &kp CG(RET)    &none         &none
+            >;
+        };
+
+        // Arrows, held by Enter
+        nav {
+            display-name = "Nav";
+            bindings = <
+&trans  &trans  &trans    &trans  &trans    &trans       &trans    &trans    &trans  &trans     &trans  &trans
+&trans  &trans  &kp LEFT  &kp UP  &kp DOWN  &kp RIGHT    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans
+&trans  &trans  &trans    &trans  &trans    &trans       &trans    &trans    &trans  &trans     &trans  &trans
+                          &trans  &trans    &trans       &trans    &trans    &trans
+            >;
+        };
+
+        // Numbers and symbols, held by F or J
         symbols {
+            display-name = "Symbols";
             bindings = <
-&kp ESC         &kp PIPE              &kp AMPERSAND               &kp SINGLE_QUOTE              &kp HASH                 &kp GREATER_THAN      &kp LESS_THAN        &kp MINUS                     &kp PLUS               &kp FSLH                             &kp ASTERISK           &kp BSPC
-&kp LEFT_BRACE  &HWLT 2 LEFT_BRACKET  &HW LCTRL LEFT_PARENTHESIS  &HW LEFT_SHIFT DOUBLE_QUOTES  &HW LEFT_COMMAND PERIOD  &HW LEFT_ALT COMMA    &HW RIGHT_ALT COLON  &HW RIGHT_COMMAND UNDERSCORE  &HW RIGHT_SHIFT EQUAL  &HW RIGHT_CONTROL RIGHT_PARENTHESIS  &HWLT 2 RIGHT_BRACKET  &kp RIGHT_BRACE
-&kp TAB         &kp DOLLAR            &kp TILDE                   &kp GRAVE                     &kp EXCLAMATION          &kp QUESTION          &kp SEMI             &kp AT_SIGN                   &kp PERCENT            &kp BSLH                             &kp CARET              &kp ESCAPE
-                                                                  &trans                        &trans                   &trans                &trans               &trans                        &trans
+&kp GRAVE  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_N4   &kp KP_N5      &kp KP_N6   &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_N0  &kp BSPC
+&kp TILDE  &kp EXCL   &kp AT     &kp HASH   &kp DOLLAR  &kp PRCNT      &kp CARET   &kp AMPS   &kp STAR   &kp LPAR   &kp RPAR   &kp DQT
+&kp PIPE   &kp BSLH   &kp COLON  &kp SEMI   &kp MINUS   &kp PLUS       &kp EQUAL   &kp UNDER  &kp LT     &kp GT     &kp QMARK  &none
+                                 &kp LBKT   &trans      &kp LBRC       &kp RBRC    &trans     &kp RBKT
             >;
         };
 
-        numbers {
+        // Bluetooth devices, held by N+M
+        bluetooth {
+            display-name = "Bluetooth";
             bindings = <
-&trans  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5    &kp N6    &kp N7    &kp N8  &kp N9     &kp N0  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans  &trans     &trans  &trans
-                        &trans  &trans  &trans    &trans    &trans    &trans
+&to BASE  &none         &none         &none         &none         &none             &none  &none  &none  &none  &none  &none
+&none     &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4      &none  &none  &none  &none  &none  &none
+&none     &bt BT_CLR    &none         &none         &none         &bt BT_CLR_ALL    &none  &none  &none  &none  &none  &none
+                                      &none         &none         &none             &none  &none  &none
             >;
         };
 
-        control {
+        // Volume, screenshot and Ctrl+Cmd shortcuts, held by the outer
+        // bottom-row keys
+        media {
+            display-name = "Media";
             bindings = <
-&kp MINUS         &kp EQUAL  &kp LG(LC(A))                    &kp LC(UP_ARROW)          &kp LG(LC(S))                     &kp LG(LS(NUMBER_4))          &none     &none     &none   &none      &none  &kp BACKSPACE
-&kp LG(LEFT_ALT)  &kp LCMD   &HW LEFT_CONTROL LC(LEFT_ARROW)  &HW LEFT_SHIFT LG(LC(C))  &HW LEFT_COMMAND LC(RIGHT_ARROW)  &HW LEFT_ALT LG(LC(LA(N)))    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &none  &none
-&none             &none      &kp LG(LC(Z))                    &kp LC(DOWN_ARROW)        &kp LG(LC(X))                     &kp LG(LC(LA(SPACE)))         &none     &none     &none   &none      &none  &kp ESC
-                                                              &trans                    &trans                            &trans                        &trans    &trans    &trans
+&to BASE  &trans     &trans     &trans         &kp LS(LG(N4))  &trans       &trans  &trans  &trans  &trans  &trans  &trans
+&trans    &kp CG(A)  &kp CG(S)  &kp C_VOL_UP   &kp CG(F)       &trans       &trans  &trans  &trans  &trans  &trans  &trans
+&trans    &kp CG(Z)  &kp CG(X)  &kp C_VOL_DN   &trans          &trans       &trans  &trans  &trans  &trans  &trans  &trans
+                                &trans         &trans          &trans       &trans  &trans  &trans
             >;
         };
 
-        vscode {
-            bindings = <
-&kp ESC        &none          &kp LG(W)        &none               &kp LG(R)      &kp LG(T)           &kp LS(LG(N))  &kp LG(O)        &kp LS(LG(I))  &kp LG(FSLH)   &none        &kp BSPC
-&none          &HWLT 2 LG(A)  &HW LCTRL LG(S)  &HWNA LEFT_SHIFT 0  &HWLT 2 LG(F)  &HWNA LEFT_ALT 0    &kp LEFT       &kp DOWN         &kp UP         &kp RIGHT      &none        &none
-&kp LS(LG(Z))  &kp LG(Z)      &kp LG(X)        &kp LG(C)           &kp LG(V)      &none               &kp LS(LG(P))  &kp LS(LG(RET))  &kp LA(RET)    &kp LC(GRAVE)  &kp LG(DOT)  &kp ESC
-                                               &trans              &trans         &trans              &trans         &trans           &trans
-            >;
+        // Spare layers that ZMK Studio can fill in
+        extra1 {
+            status = "reserved";
         };
 
-        bluethooth {
-            bindings = <
-&none  &none         &none         &none         &none         &none           &none       &none           &none  &none  &none  &none
-&none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &none       &none           &none  &none  &none  &none
-&none  &none         &none         &none         &none         &none           &bt BT_CLR  &bt BT_CLR_ALL  &none  &none  &none  &to 0
-                                   &none         &none         &none           &none       &none           &none
-            >;
-        };
-
-        template {
-            bindings = <
-&kp ESC  &none      &none        &none             &none               &none             &none            &none                &none              &none                &none              &kp BSPC
-&none    &HWLT 2 A  &HW LCTRL S  &HW LEFT_SHIFT D  &HW LEFT_COMMAND F  &HW LEFT_ALT G    &HW RIGHT_ALT H  &HW RIGHT_COMMAND J  &HW RIGHT_SHIFT K  &HW RIGHT_CONTROL L  &HWLT 2 SEMICOLON  &none
-&none    &none      &none        &none             &none               &none             &none            &none                &none              &none                &none              &kp ESCAPE
-                                 &trans            &trans              &trans            &trans           &trans               &trans
-            >;
+        extra2 {
+            status = "reserved";
         };
     };
 };
