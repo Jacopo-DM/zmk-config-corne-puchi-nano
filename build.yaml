@@ -46,6 +46,10 @@ include:
       -DCONFIG_ZMK_SPLIT_BLE_CENTRAL_BATTERY_LEVEL_PROXY=y
   - board: puchi_ble_v1
     shield: corne_right
+  # Flash to both halves to erase all stored pairings, then flash the
+  # normal firmware again.
+  - board: puchi_ble_v1
+    shield: settings_reset
 
 # ---------------------------------------------------------------------- #
 # OLD CONFIG
