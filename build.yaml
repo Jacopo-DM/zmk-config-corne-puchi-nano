@@ -32,8 +32,12 @@
 #
 ---
 include:
+  # Studio runs on the central (left) half only; the snippet adds the USB
+  # serial endpoint Studio talks to.
   - board: puchi_ble_v1
     shield: corne_left nice_view_adapter nice_view
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_STUDIO_LOCKING=n
   - board: puchi_ble_v1
     shield: corne_right nice_view_adapter nice_view
 
