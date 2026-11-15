@@ -32,14 +32,20 @@
 #
 ---
 include:
-  # Studio runs on the central (left) half only; the snippet adds the USB
-  # serial endpoint Studio talks to.
+  # Studio and battery forwarding run on the central (left) half only. The
+  # snippet adds the USB serial endpoint Studio talks to; the battery flags
+  # make the left half read the right half's level and report it to the
+  # computer as a second battery.
   - board: puchi_ble_v1
-    shield: corne_left nice_view_adapter nice_view
+    shield: corne_left
     snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_STUDIO_LOCKING=n
+    cmake-args: >-
+      -DCONFIG_ZMK_STUDIO=y
+      -DCONFIG_ZMK_STUDIO_LOCKING=n
+      -DCONFIG_ZMK_SPLIT_BLE_CENTRAL_BATTERY_LEVEL_FETCHING=y
+      -DCONFIG_ZMK_SPLIT_BLE_CENTRAL_BATTERY_LEVEL_PROXY=y
   - board: puchi_ble_v1
-    shield: corne_right nice_view_adapter nice_view
+    shield: corne_right
 
 # ---------------------------------------------------------------------- #
 # OLD CONFIG
