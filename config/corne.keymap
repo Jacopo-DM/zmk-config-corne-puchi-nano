@@ -8,9 +8,10 @@
  *            36 37 38     39 40 41
  *
  * Differences from the Kyria, which has five thumb keys a side and two
- * extra inner keys: the thumbs keep Cmd, Space and Enter; the layer-6 key
- * moves to the empty outer bottom-row key; [ ] { } move to the symbol
- * layer thumbs; the RGB layer becomes the Bluetooth layer.
+ * extra inner keys: the thumbs keep Cmd, Enter and Space, outer to inner;
+ * the layer-6 key moves to the empty outer bottom-row key; [ ] { } move to
+ * the symbol layer thumbs, leaving Space; the RGB layer becomes the
+ * Bluetooth layer.
  */
 
 #include <behaviors.dtsi>
@@ -90,7 +91,7 @@
 &kp ESC    &kp Q            &kp W            &kp E           &kp R      &kp T        &kp Y      &kp U      &kp I           &kp O            &kp P               &kp BSPC
 &kp TAB    &mt LSHFT A      &mt LCTRL S      &mt LALT D      &lt SYM F  &kp G        &kp H      &lt SYM J  &mt RALT K      &mt RCTRL L      &mt RSHFT SEMI      &kp SQT
 &mo MEDIA  &kp Z            &kp X            &kp C           &kp V      &kp B        &kp N      &kp M      &kp COMMA       &kp DOT          &kp FSLH            &mo MEDIA
-                                             &kp LGUI        &kp SPACE  &lt NAV RET  &lt NAV RET  &kp SPACE  &kp RGUI
+                                             &kp LGUI        &lt NAV RET  &kp SPACE  &kp SPACE  &lt NAV RET  &kp RGUI
             >;
         };
 
@@ -112,7 +113,7 @@
 &to BASE  &none      &none      &none  &none  &none          &none          &none         &none       &none          &none  &none
 &none     &kp CG(A)  &kp CG(S)  &none  &none  &none          &kp CG(LEFT)   &kp CG(DOWN)  &kp CG(UP)  &kp CG(RIGHT)  &none  &none
 &none     &kp CG(Z)  &kp CG(X)  &none  &none  &none          &none          &none         &none       &none          &none  &none
-                                &none  &none  &kp CG(RET)    &kp CG(RET)    &none         &none
+                                &none  &kp CG(RET)  &none    &none    &kp CG(RET)         &none
             >;
         };
 
@@ -134,7 +135,7 @@
 &kp GRAVE  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_N4   &kp KP_N5      &kp KP_N6   &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_N0  &kp BSPC
 &kp TILDE  &kp EXCL   &kp AT     &kp HASH   &kp DOLLAR  &kp PRCNT      &kp CARET   &kp AMPS   &kp STAR   &kp LPAR   &kp RPAR   &kp DQT
 &kp PIPE   &kp BSLH   &kp COLON  &kp SEMI   &kp MINUS   &kp PLUS       &kp EQUAL   &kp UNDER  &kp LT     &kp GT     &kp QMARK  &none
-                                 &kp LBKT   &trans      &kp LBRC       &kp RBRC    &trans     &kp RBKT
+                                 &kp LBKT   &kp LBRC    &trans         &trans      &kp RBRC   &kp RBKT
             >;
         };
 
